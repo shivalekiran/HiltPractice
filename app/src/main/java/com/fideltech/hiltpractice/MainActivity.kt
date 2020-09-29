@@ -14,14 +14,14 @@ class MainActivity : AppCompatActivity() {
 
     //step 4 Inject created dependencies in activity
     //its call field injection
-//    @Inject
-//    lateinit var someClass: SomeClass
+    @Inject
+    lateinit var someClass: SomeClass
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-//        someClass.printLn()
-//        someClass.doSomeOtherthing()
+        someClass.printLn()
+        someClass.doSomeOtherthing()
     }
 }
 
