@@ -25,6 +25,12 @@ class MainActivity : AppCompatActivity() {
 //    @Inject
 //    lateinit var demoFragmentScope: DemoFragmentScope
 
+    /*
+   //    Interface issue
+       //below statement raise issue becouse @InterfaceInjectionClass class need interface in constructor.
+       @Inject
+       lateinit var interfaceInjectionImpl: InterfaceInjectionClass
+   */
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -32,6 +38,8 @@ class MainActivity : AppCompatActivity() {
         someClass.doSomeOtherthing()
         dmeoScope.demoMethod()
 //        demoFragmentScope.demoMethod()
+        //
+//        interfaceInjectionImpl.someMethod()
     }
 }
 
@@ -44,6 +52,3 @@ class MyFragment : Fragment() {
     lateinit var demoFragmentScope: DemoFragmentScope
 }
 
-//injection interface
-//Scene 1: you cant inject interface from constructor
-//Scene 2: you cant inject 3rd party class or object in class, can create object for 3rd party
