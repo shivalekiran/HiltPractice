@@ -17,32 +17,20 @@ class MainActivity : AppCompatActivity() {
     @Inject
     lateinit var someClass: SomeClass
 
-
-    //Scoping
-    @Inject
-    lateinit var dmeoScope: DemoScope
-    //if it injected compile time error
-//    @Inject
-//    lateinit var demoFragmentScope: DemoFragmentScope
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         someClass.printLn()
         someClass.doSomeOtherthing()
-        dmeoScope.demoMethod()
-//        demoFragmentScope.demoMethod()
     }
 }
 
 
+/*
 //fragment
 @AndroidEntryPoint
 class MyFragment : Fragment() {
-    //injection scoped object to same scope as define in document.
-    @Inject
-    lateinit var demoFragmentScope: DemoFragmentScope
-}
+}*/
 
 //injection interface
 //Scene 1: you cant inject interface from constructor
