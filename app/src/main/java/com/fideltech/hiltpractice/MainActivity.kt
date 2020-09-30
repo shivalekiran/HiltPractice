@@ -25,6 +25,16 @@ class MainActivity : AppCompatActivity() {
 //    @Inject
 //    lateinit var demoFragmentScope: DemoFragmentScope
 
+
+    //injecting management
+    //its depends on student interface so it cant be instantiate -sol use Module to inject
+    @Inject
+    lateinit var management: Management
+
+    //now i want to inject 3rd party object
+    @Inject
+    lateinit var constaintLayout: ConstraintLayout
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -32,6 +42,8 @@ class MainActivity : AppCompatActivity() {
         someClass.doSomeOtherthing()
         dmeoScope.demoMethod()
 //        demoFragmentScope.demoMethod()
+
+        management.totalStudent()
     }
 }
 
