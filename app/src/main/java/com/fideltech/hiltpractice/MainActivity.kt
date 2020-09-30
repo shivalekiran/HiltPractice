@@ -35,15 +35,29 @@ class MainActivity : AppCompatActivity() {
     @Inject
     lateinit var constaintLayout: ConstraintLayout
 
+
+    //same type of injection example
+    @Inject
+    @ApplicationName
+    lateinit var appName:String
+
+    @Inject
+    @ActivityName   //annotation for distinguish same object
+    lateinit var activityName: String
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         someClass.printLn()
         someClass.doSomeOtherthing()
         dmeoScope.demoMethod()
-//        demoFragmentScope.demoMethod()
 
         management.totalStudent()
+        println()
+        println()
+
+        println("Application Name- $appName")
+        println("Activity Name- $activityName")
     }
 }
 
